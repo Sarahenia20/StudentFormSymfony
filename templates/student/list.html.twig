@@ -1,0 +1,68 @@
+  {% extends 'base.html.twig' %}
+
+{% block body %}
+  <div style="text-align: center;">
+        <h1>List of Students</h1>
+        <a href="{{ path('addF') }}" class="btn btn-Add">Add</a>
+    </div>
+<table style="margin: 0 auto; width: 70%; border-collapse: collapse;">
+    <thead>
+    
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Classroom</th>
+            <th>Actions</th> 
+        </tr>
+    </thead>
+    <tbody>
+        {% for t in response %}
+            <tr>
+                <td>{{ t.name }}</td>
+                <td>{{ t.email }}</td>
+                <td>{{ t.age }}</td>
+                <td>{{ t.classroom }}</td>
+                <td>
+                    <a href="{{ path('update', {'id': t.id}) }}" class="btn btn-update">Update</a>
+                    <a href="{{ path('remove', {'id': t.id}) }}" class="btn btn-delete">Remove</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 0.5px solid #000;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin: 5px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .btn-update {
+        background-color: #007bff;
+        color: #fff;
+    }
+ .btn-Add {
+        background-color: #007bff;
+        color: #fff;
+    }
+    .btn-delete {
+        background-color: #ff0000;
+        color: #fff;
+        text-align: center;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div style="text-align: center;">
+        <h1>Add & Update Student</h1>
+    </div>
+
+    <div style="text-align: center;">
+        {{ form_start(f) }}
+        
+        {{ form_row(f.name) }}
+        {{ form_row(f.age) }}
+        {{ form_row(f.email) }}
+        {{ form_row(f.classroom) }}
+        
+       
+        
+        {{ form_end(f) }}
+    </div>
+
+ <style>
+/* Add this to your CSS file */
+
+/* Center the form frame */
+.form-frame {
+    width: 70%;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px #ccc;
+    background-color: #f9f9f9;
+}
+
+/* Style form input labels */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style form inputs */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Style the Save button */
+.btn-save {
+    background-color: #4CAF50; /* Green color for the Save button */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn-save:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+</style>
+{% endblock %}
